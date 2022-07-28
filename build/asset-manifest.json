@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3596d65a.css",
+    "main.js": "/static/js/main.be912639.js",
+    "static/js/787.56545770.chunk.js": "/static/js/787.56545770.chunk.js",
+    "static/media/floral.jpg": "/static/media/floral.1f8015dc3ef689a70272.jpg",
+    "static/media/kirk.jpg": "/static/media/kirk.a966d6a64ab7236ad4ca.jpg",
+    "static/media/truth-alt.jpg": "/static/media/truth-alt.164c7269567670c2c67d.jpg",
+    "static/media/logo.png": "/static/media/logo.6c4b5d96b4fbdcbe1723.png",
+    "index.html": "/index.html",
+    "main.3596d65a.css.map": "/static/css/main.3596d65a.css.map",
+    "main.be912639.js.map": "/static/js/main.be912639.js.map",
+    "787.56545770.chunk.js.map": "/static/js/787.56545770.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3596d65a.css",
+    "static/js/main.be912639.js"
+  ]
+}

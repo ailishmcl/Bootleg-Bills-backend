@@ -1,10 +1,15 @@
 const express = require("express");
 
+const path = require('path')
+
 const mongoose = require("mongoose");
 
 require("dotenv").config();
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'build')));
+
 app.use(express.json())
 
 
@@ -25,6 +30,10 @@ app.use("/", newsLetterRouter);
 
 
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
+
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+})
 
 mongoose.connect(process.env.mongoDBURL,
     {useNewUrlParser: true,
