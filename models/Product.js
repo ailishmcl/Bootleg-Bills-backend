@@ -19,7 +19,7 @@ const productSchema = mongoose.Schema({
     productDescription: {
         type: String,
         required: true,
-        maxlength: [500, "Product description exceeds character limit"]
+        maxlength: [600, "Product description exceeds character limit"]
 
     },
     productStock: {

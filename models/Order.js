@@ -41,7 +41,6 @@ const orderSchema = mongoose.Schema({
         },
         lineTwo: {
             type: String,
-            required: true
         },
         city: {
             type: String,
@@ -63,7 +62,6 @@ const orderSchema = mongoose.Schema({
         },
         lineTwo: {
             type: String,
-            required: true
         },
         city: {
             type: String,
