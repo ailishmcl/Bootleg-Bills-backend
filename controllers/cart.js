@@ -1,5 +1,6 @@
 const {Cart} = require('../models/Cart')
 const {Product} = require('../models/Product')
+const {Order} = require('../models/Order')
 
 const moment = require('moment');
 
@@ -9,6 +10,8 @@ const moment = require('moment');
 //     console.log(req.body)
 
 // }
+
+// Cart POST: saving cart contents to the database
 exports.cart_create_post = (req, res) => {
     console.log("POST API connecting")
     console.log(req.body)
@@ -24,8 +27,56 @@ exports.cart_create_post = (req, res) => {
     })
 }
 
+// Order POST: saving order form contents to the database
+exports.order_create_post = (req, res) => {
+    console.log("order API connecting")
+    console.log(req.body)
+    let order = new Order (req.body);
+    order.save()
+    .then((order) => {
+        res.json({order})
+    })
+    .catch((error) => {
+        console.log(error)
+        res.send("cannot accept order, please try again later")
+    })
+}
 
+// Order GET: fetch all orders in the DB
+exports.order_index_get = (req, res) =>  {
+    Order.find()
+    .then(order => {
+        res.json(order)
+    })
+    .catch((err) => {
+        console.log(err)
+        res.send("Whoops! Couldn't get the orders.")
+    })
+}
 
+// Order GET: fetch order by ID
+exports.order_detail_get = (req, res) => {
+    console.log("Query ID:", req.query.id)
+    Order.findById(req.query.id)
+    .then(order => {
+        res.json(order)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
+
+// Order PUT: find and update
+exports.order_update_put = (req, res) => {
+    console.log("id:", req.body._id, "body:", req.body)
+    Order.findByIdAndUpdate(req.body._id, req.body, {new: true})
+    .then(product => {
+    res.json({product})
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
 
 // const cart = async () => {
 //     const carts = await Cart.find().populate({

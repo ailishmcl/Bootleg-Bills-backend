@@ -19,7 +19,7 @@ const productSchema = mongoose.Schema({
     productDescription: {
         type: String,
         required: true,
-        maxlength: [500, "Product description exceeds character limit"]
+        maxlength: [600, "Product description exceeds character limit"]
 
     },
     productStock: {
@@ -38,10 +38,11 @@ const productSchema = mongoose.Schema({
     productSource: {
         type: String,
         maxlength: [100, "Creator name exceeds character limit"]
+    },
+    productAudio: {
+        type: String,
     }
 
-
-    // Still need to set up Order Models relationship 
 
 },
 {

@@ -73,6 +73,7 @@ exports.auth_login_post = async (req, res) => {
     }
 }
 
+// User GET - get all registered users
 exports.auth_user_get = (req, res) => {
     console.log(req.body)
 
@@ -83,5 +84,18 @@ exports.auth_user_get = (req, res) => {
     .catch((err) => {
         console.log(err);
         res.send("???")
+    })
+}
+
+// User GET - get one user by ID
+
+exports.user_detail_get = (req, res) => {
+    console.log("Req ID:", req.query.id)
+    User.findById(req.query.id)
+    .then(user => {
+        res.json({user})
+    })
+    .catch((err) => {
+        console.log(err)
     })
 }
